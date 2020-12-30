@@ -1,3 +1,4 @@
+<!-- Python functions registering via XML to gnumeric -->
 <?xml version="1.0"?>
 <plugin id="Gnumeric_MyFuncPlugin">
 	<information>
@@ -5,23 +6,15 @@
 		<description>A few extra python functions demonstrating the API.</description>
 	</information>
 	<loader type="Gnumeric_PythonLoader:python">
-		<!-- <attribute name="module_name" value="my_func"/> 3 -->
 		<attribute name="module_name" value="reg_vf"/>
 	</loader>
 	<services>
 		<service type="function_group" id="example"> 4
 			<category>Local Python</category>
-			<functions><!-- 
-				<function name="py_add"/>
-				<function name="py_sub"/>
-				<function name="py_sum"/>
-				<function name="py_secmax"/> -->
-				<!-- <function name="py_write"/> -->
-				<!-- <function name='py_read'/> -->
+			<functions>
 				<function name='py_exit'/>
 				<function name='py_write'/>
 				<function name='py_read'/>
-				<!-- <function name='py_sub'/> -->
 			</functions>
 		</service>
 	</services>

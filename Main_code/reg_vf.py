@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: latin-1 -*-
+# Inporting Libraries
 from Gnumeric import GnumericError, GnumericErrorVALUE
 import Gnumeric
 import string
@@ -7,12 +8,13 @@ import os
 import time
 import sys
 from struct import *
-print(sys.version)
+# print(sys.version)
 reload(sys)
 sys.setdefaultencoding('latin-1')
 import pdb
 
-class Aval_mm(object):
+
+class APB(object):
 	WRITE=0
 	READ=1	
 	IDLE=2
@@ -29,7 +31,7 @@ class Aval_mm(object):
 	fifo_read = "/home/utk/Intern_Project/Interactive-Register-Debugging/apb_slave/testbench/data.txt"
 
 
-	# """docstring for Aval-mm"""
+	# Passing data to APB testbench
 	def __init__(self,address = 0,data = 0,id = 0, version = 1):
 		self.id=id
 		self.version=version
@@ -42,11 +44,9 @@ class Aval_mm(object):
 		fifo = open(apb_fifo,'w')
 		ffrd = open(fifo_read, 'r')
 
-
+# Writing data to fifo and sending to TB
 	def write(self,address,data):
-		# print("1")
 		address = int(str(address))
-		# wdata = int(data,16)
 		pkt_len = 16
 		endian = 0x0f
 		op = self.WRITE
@@ -64,7 +64,7 @@ class Aval_mm(object):
 		else:
 			return False
 
-
+# Reading data from fifo
 	def read(self,address):
 		print address
 		address = int(str(address))
@@ -82,7 +82,7 @@ class Aval_mm(object):
 		read_value = str(hex(int(Lines[-1].strip(),16)))
 		return read_value
 
-
+# Exiting Simulation and Closing fifos
 	def ctrl_command(self):
 		pkt_len = 0;
 		endian=0x0f;
@@ -95,7 +95,7 @@ class Aval_mm(object):
 flag = True
 def write_val(addr,data):
 	global flag
-	mm = Aval_mm()
+	mm = APB()
 	if flag == True:
 		mm.open_fifos()
 		flag = False
@@ -103,7 +103,7 @@ def write_val(addr,data):
 	mm.write(addr,data)
 def read_val(addr):
 	global flag
-	mm = Aval_mm()
+	mm = APB()
 	if flag == True:
 		mm.open_fifos()
 		flag = False
@@ -112,9 +112,9 @@ def read_val(addr):
 def exit_sim():
 	wb = Gnumeric.workbooks()[0] 
 	s  = wb.sheets()[1]
-	mm = Aval_mm()
+	mm = APB()
 	mm.ctrl_command()
-
+#Getting the currently referenced field
 def get_field(cell_range):
 	global n1,m1,m2,wb,s
 	col  = Gnumeric.functions['column']   
@@ -135,7 +135,7 @@ def get_field(cell_range):
 		num = cell.get_value()
 		ar.append(num)
 	return ar
-
+#Getting all the fields of Register
 def get_fields(ar):	
 	field_ar = []
 	rw = n1+1
@@ -155,10 +155,11 @@ def get_fields(ar):
 			fg = False
 		rw += 1
 	return field_ar
-
+#Function for writing data to a register or field
 def reg_write(cell_range):
 	ar = get_field(cell_range)
 	############################################################
+	# Checking if cell is valid
 	if ar[0] == None:
 		return 'INVALID FIELD'
 	else:
@@ -219,10 +220,11 @@ def reg_write(cell_range):
 					return 'DONE' 
 		else:
 			return "INVALID FIELD"
-
+#Function for reading data from a register or field
 def reg_read(cell_range):
 	ar = get_field(cell_range)
 	############################################################
+	#checking if field is valid
 	if ar[0] == None:
 		return 'INVALID FIELD'
 	else:
@@ -279,12 +281,9 @@ def reg_read(cell_range):
 		else:
 			return 'INVALID FIELD'
 
-# Translate the func_add python function to a gnumeric function and register it
+# Translate the python function to a gnumeric function and register it
 example_functions = {
     'py_exit':exit_sim,
     'py_write': reg_write,
     'py_read': reg_read
 }
-
- # RUN THIS BEFORE COMMITING TO GIT
- # rsync -avu /home/utk/.gnumeric/1.12.46/plugins/myfunc/* /home/utk/Intern_Project/Register_Verification/Synched/
