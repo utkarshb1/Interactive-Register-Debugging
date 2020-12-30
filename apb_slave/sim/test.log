@@ -1,0 +1,312 @@
+iverilog -f commands.f -I ../rtl -I ../testbench -D WAVES -o apb.vvp ../rtl/apb_slave.v ../testbench/tb_top.v
+vvp -M. -mapb apb.vvp +UVM_VERBOSITY=DEBUG +UVM_TESTNAME=apb.random_test  +UVM_OBJECTION_TRACE # 
+UVM_INFO uvm/base/uvm_root.d(1281) @ 0: reporter [UVM/RELNOTES] 
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  This implementation of the UVM Library deviates from the 1800.2-2017
+  standard.  See the DEVIATIONS.md file contained in the release
+  for more details.
+
+----------------------------------------------------------------
+Accellera:1800.2-2017:UVM:1.0
+
+All copyright owners for this kit are listed in NOTICE.txt
+All Rights Reserved Worldwide
+----------------------------------------------------------------
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+Calling _uvm__configure_parallelism on: test.root_entity.(uvm_tb_root)
+UVM_INFO uvm/base/uvm_root.d(389) @ 0: reporter [RNTST] Running test random_test (via factory override for test "apb.random_test")...
+UVM_INFO /home/puneet/code/embedded-uvm/build/ldc2-1.18.0-linux-x86_64/bin/../import/uvm/comps/uvm_vpi_monitor.d(127) @ 0: uvm_test_top.env.parallel_agent.monitor [VPIREG] Registering vpi system task: $apb_put
+UVM_INFO /home/puneet/code/embedded-uvm/build/ldc2-1.18.0-linux-x86_64/bin/../import/uvm/comps/uvm_vpi_driver.d(179) @ 0: uvm_test_top.env.parallel_agent.driver [VPIREG] Registering vpi system task: $apb_try_next_item
+UVM_INFO /home/puneet/code/embedded-uvm/build/ldc2-1.18.0-linux-x86_64/bin/../import/uvm/comps/uvm_vpi_driver.d(193) @ 0: uvm_test_top.env.parallel_agent.driver [VPIREG] Registering vpi system task: $apb_item_done
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'run'
+VCD info: dumpfile apb.vcd opened for output.
+UVM_INFO ../testbench/apb.d(359) @ 0: uvm_test_top.env.parallel_agent.driver [INFO] Called my_driver::run_phase
+UVM_INFO uvm/base/uvm_objection.d(311) @ 0: run_objection [OBJTN_TRC] Object uvm_test_top raised 1 objection(s) (apb_test): count=1  total=1
+UVM_INFO uvm/base/uvm_objection.d(344) @ 0: run_objection [OBJTN_TRC] Object test.root_entity.(uvm_tb_root) added 1 objection(s) to its total (raised from source object uvm_test_top, apb_test): count=0  total=1
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]
+trHeader is: 7F04420E0E70
+Packet length is: 12
+rb_f is : rb_fields(0, 32, 201348562)
+inside read of request thread
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @813  
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+`
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_reset' (id=17) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.reset' (id=26) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_reset' (id=29) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_reset'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_configure' (id=32) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.configure' (id=35) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_configure' (id=38) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_configure'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_main' (id=41) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.main' (id=44) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_main' (id=47) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_main'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_shutdown' (id=50) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'pre_shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 0: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.shutdown' (id=53) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(391) @ 0: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+##### READ: @20
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 16, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+trHeader is: 7F04420E0E70
+Packet length is: 16
+rb_f is : rb_fields(4, 32, 85)
+inside write of req_thread
+Write Data is: 85
+Write Data is: 00000055
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1057 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 130000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+-------------------------------------------------
+Name          Type              Size  Value      
+-------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @796       
+  addr        UBit!8            8     0x20       
+  data        UBit!32           32    0x00000000 
+  kind        kind_e            8     0x01 [READ]
+  error       bool              1     0x0        
+-------------------------------------------------
+
+##### WRITE 55: @20
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 12, 0, 0, 0, 1, 0, 2, 0, 0, 0, 1]
+trHeader is: 7F04420E0E70
+Packet length is: 12
+rb_f is : rb_fields(0, 32, 201359108)
+inside read of request thread
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1075 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 170000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+--------------------------------------------------
+Name          Type              Size  Value       
+--------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @798        
+  addr        UBit!8            8     0x20        
+  data        UBit!32           32    0x00000055  
+  kind        kind_e            8     0x00 [WRITE]
+  error       bool              1     0x0         
+--------------------------------------------------
+
+##### READ: @20
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 16, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0]
+trHeader is: 7F04420E0E70
+Packet length is: 16
+rb_f is : rb_fields(4, 36, 170)
+inside write of req_thread
+Write Data is: 170
+Write Data is: 000000aa
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1091 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 210000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+-------------------------------------------------
+Name          Type              Size  Value      
+-------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @1065      
+  addr        UBit!8            8     0x20       
+  data        UBit!32           32    0x00000055 
+  kind        kind_e            8     0x01 [READ]
+  error       bool              1     0x0        
+-------------------------------------------------
+
+##### WRITE aa: @24
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 12, 0, 0, 0, 1, 0, 4, 0, 0, 0, 1]
+trHeader is: 7F04420E0E70
+Packet length is: 12
+rb_f is : rb_fields(0, 36, 201359108)
+inside read of request thread
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1107 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 250000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+--------------------------------------------------
+Name          Type              Size  Value       
+--------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @1083       
+  addr        UBit!8            8     0x24        
+  data        UBit!32           32    0x000000aa  
+  kind        kind_e            8     0x00 [WRITE]
+  error       bool              1     0x0         
+--------------------------------------------------
+
+##### READ: @24
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 16, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0]
+trHeader is: 7F04420E0E70
+Packet length is: 16
+rb_f is : rb_fields(4, 40, 204)
+inside write of req_thread
+Write Data is: 204
+Write Data is: 000000cc
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1123 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 290000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+-------------------------------------------------
+Name          Type              Size  Value      
+-------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @1099      
+  addr        UBit!8            8     0x24       
+  data        UBit!32           32    0x000000aa 
+  kind        kind_e            8     0x01 [READ]
+  error       bool              1     0x0        
+-------------------------------------------------
+
+##### WRITE cc: @28
+Waiting for data from pipe
+Read data from pipe
+rawTrHeader is: [15, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 5]
+trHeader is: 7F04420E0E70
+Packet length is: 0
+inside terminate of this
+---------------------------------------------
+Name     Type                    Size  Value 
+---------------------------------------------
+apb_seq  apb_qemu_seq!(8u, 32u)  -     @1139 
+  req    object                  -     <null>
+  rsp    object                  -     <null>
+---------------------------------------------
+
+UVM_INFO ../testbench/apb.d(59) @ 330000: uvm_test_top.env.u_apb_monitor [APB MONITOR] 
+--------------------------------------------------
+Name          Type              Size  Value       
+--------------------------------------------------
+rsp_fifo/rsp  apb_rw!(8u, 32u)  -     @1115       
+  addr        UBit!8            8     0x28        
+  data        UBit!32           32    0x000000cc  
+  kind        kind_e            8     0x00 [WRITE]
+  error       bool              1     0x0         
+--------------------------------------------------
+
+##### READ: @00
+UVM_INFO uvm/base/uvm_objection.d(311) @ 370000: run_objection [OBJTN_TRC] Object uvm_test_top dropped 1 objection(s) (apb_test): count=0  total=0
+UVM_INFO uvm/base/uvm_objection.d(311) @ 370000: run_objection [OBJTN_TRC] Object uvm_test_top all_dropped 1 objection(s) (apb_test): count=0  total=0
+UVM_INFO uvm/base/uvm_objection.d(344) @ 370000: run_objection [OBJTN_TRC] Object test.root_entity.(uvm_tb_root) subtracted 1 objection(s) from its total (dropped from source object uvm_test_top, apb_test): count=0  total=0
+UVM_INFO uvm/base/uvm_objection.d(344) @ 370000: run_objection [OBJTN_TRC] Object test.root_entity.(uvm_tb_root) subtracted 1 objection(s) from its total (all_dropped from source object uvm_test_top, apb_test): count=0  total=0
+UVM_INFO uvm/base/uvm_phase.d(1939) @ 370000: reporter [PH/TRC/EXE/ALLDROP] Phase 'common.run' (id=84) PHASE EXIT ALL_DROPPED
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 370000: reporter [PH_READY_TO_END] Phase 'common.run' (id=84) PHASE READY TO END
+UVM_INFO uvm/base/uvm_phase.d(1958) @ 370000: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_shutdown' (id=56) PHASE READY TO END
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 370000: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'run'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 370000: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'run'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 370000: uvm_test_top.env.parallel_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_shutdown'
+UVM_INFO uvm/seq/uvm_sequencer_base.d(460) @ 370000: uvm_test_top.env.serial_agent.sequencer [PHASESEQ] No default sequence to kill for phase 'post_shutdown'
+UVM_INFO uvm/base/uvm_report_catcher.d(749) @ 370000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO uvm/base/uvm_report_server.d(964) @ 370000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   85
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+** Report counts by id
+[OBJTN_TRC]     6
+[INFO]     1
+[UVM/RELNOTES]     1
+[PH/TRC/EXE/ALLDROP]     1
+[VPIREG]     3
+[PH_READY_TO_END]    13
+[PHASESEQ]    52
+[UVM/REPORT/CATCHER]     1
+[RNTST]     1
+[APB MONITOR]     6
+
+ > Sending vpiFinish signal to the Verilog Simulator
