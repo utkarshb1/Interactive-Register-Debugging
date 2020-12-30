@@ -22,7 +22,7 @@ $cd ~/.gnumeric/(version)/plugins/myfuncs/
 Go to `path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/testbench` and open file `apb.d`. In this file at line 278, change the file location to `path/to/working/directory/Interactive-Register-Debugging/apb_slave/testbench/data.txt`
 
 In the `path/to/your/working/directory/Interactive-Register-Debugging/Main_code`, there's a `reg_vf.py` file, change the file locations of the fifos at line 30 and 31 to <br>
-`apb_fifo = path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/sim/qemu_apb_req.fifo` and 
+`apb_fifo = path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/sim/qemu_apb_req.fifo` and <br>
 `fifo_read = path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/testbench/data.txt` respectively.
 
 Copy the plugin files from the Main_code directory to the plugin directory
