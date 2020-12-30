@@ -19,14 +19,20 @@ $mkdir ~/.gnumeric/(version)/plugins
 $mkdir ~/.gnumeric/(version)/plugins/myfunc 
 $cd ~/.gnumeric/(version)/plugins/myfuncs/ 
 ```
-Copy the plugin files from the repository to the above directory
-```
-$cp path/to/your/working/directory/Interactive_Register_Debugging/Main_code/reg_vf.py /home/user/.gnumeric/(version)/plugins/myfuncs/reg_vf.py
-$cp path/to/your/working/directory/Interactive_Register_Debugging/Main_code/plugin.xml /home/user/.gnumeric/(version)/plugins/myfuncs/plugin.xml
-```
-Go to `path/to/your/working/directory/Interactive_Register_Debugging/apb_slave/testbench` and open file `apb.d`. In this file at line 
+Go to `path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/testbench` and open file `apb.d`. In this file at line 278, change the file location to `path/to/working/directory/Interactive-Register-Debugging/apb_slave/testbench/data.txt`
 
-3. Change the current directory to the following: `$cd path/to/your/working/directory/Interactive_Register_Debugging/apb_slave/sim/` 
+In the `path/to/your/working/directory/Interactive-Register-Debugging/Main_code`, there's a `reg_vf.py` file, change the file locations of the fifos at line 30 and 31 to <br>
+`apb_fifo = path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/sim/qemu_apb_req.fifo` and 
+`fifo_read = path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/testbench/data.txt` respectively.
+
+Copy the plugin files from the Main_code directory to the plugin directory
+```
+$cp path/to/your/working/directory/Interactive-Register-Debugging/Main_code/reg_vf.py /home/user/.gnumeric/(version)/plugins/myfuncs/reg_vf.py
+$cp path/to/your/working/directory/Interactive-Register-Debugging/Main_code/plugin.xml /home/user/.gnumeric/(version)/plugins/myfuncs/plugin.xml
+```
+
+
+3. Change the current directory to the following: `$cd path/to/your/working/directory/Interactive-Register-Debugging/apb_slave/sim/` 
 
 You can see various files in this directory.<br/>
 3.1 To compile and run the Simulation, open terminal in this directory and run following commands:
