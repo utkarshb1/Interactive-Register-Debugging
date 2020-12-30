@@ -21,8 +21,8 @@ $cd ~/.gnumeric/(version)/plugins/myfuncs/
 ```
 Copy the plugin files from the repository to the above directory
 ```
-$cp path/to/your/working/directory/Register_Verification/Gnumeric_files/reg_gnfunc.py /home/user/.gnumeric/(version)/plugins/myfuncs/reg_vf.py 
-$cp path/to/your/working/directory/Register_Verification/Gnumeric_files/my_link.xml /home/user/.gnumeric/(version)/plugins/myfuncs/plugin.xml
+$cp path/to/your/working/directory/Interactive_Register_Debugging/Synched/reg_vf.py /home/user/.gnumeric/(version)/plugins/myfuncs/reg_vf.py
+$cp path/to/your/working/directory/Interactive_Register_Debugging/Synched/plugin.xml /home/user/.gnumeric/(version)/plugins/myfuncs/plugin.xml
 ```
 
 3. Change the current directory to the following: `$cd path/to/your/working/directory/Register_Verification/apb_qemu/sim/` 
