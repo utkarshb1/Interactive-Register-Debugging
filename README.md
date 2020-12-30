@@ -5,7 +5,7 @@
 1. Clone this repository to your working directory
 ```
 $cd path/to/your/working/directory 
-$git clone https://github.com/utkarshb1/Register_Verification.git
+$git clone  https://github.com/utkarshb1/Interactive-Register-Debugging.git
 ```
 2. Setting up plugins for Gnumeric <br/>
 2.1 Make sure gnumeric is installed, if not run `sudo apt install gnumeric` in terminal <br/>
