@@ -183,9 +183,12 @@ def reg_write(cell_range):
 				fg = True
 				i = n1-1
 				while fg == True:
+					pdb.set_trace()
 					cell = s[m1+2,i]
 					val = cell.get_value()
-					if val != None:
+					reg_cell = s[m1,i]
+					reg_name = reg_cell.get_value()
+					if (val != None and reg_name.lower() == 'register'):
 						addr = int(val,16)
 						fg = False
 					else:
@@ -248,7 +251,9 @@ def reg_read(cell_range):
 				while fg == True:
 					cell = s[m1+2,i]
 					val = cell.get_value()
-					if val != None:
+					reg_cell = s[m1,i]
+					reg_name = reg_cell.get_value()
+					if (val != None and reg_name.lower() == 'register'):
 						addr = int(val,16)
 						fg = False
 					else:
