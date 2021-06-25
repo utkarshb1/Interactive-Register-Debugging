@@ -43,7 +43,7 @@ make
 make run 
 ```
 
- **Note**: Make sure that EUVM is in your PATH, example `echo $PATH` = `/home/user/Intern_Project/euvm-1.0-beta14/bin`:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+ **Note**: Make sure that EUVM is in your PATH, example `echo $PATH` = `/home/user/euvm-1.0-beta14/bin`:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 4. In /sim/ directory, there’s file named :
 
